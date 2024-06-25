@@ -1,0 +1,9 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "authors_author" ("uuid" char(32) NOT NULL PRIMARY KEY, "first_name" varchar(255) NOT NULL, "last_name" varchar(255) NOT NULL, "subject" varchar(255) NOT NULL);
+INSERT INTO authors_author VALUES('1efffa6d474a46cab6375c04ec7d2b53','David','Goggins','Self-Help');
+INSERT INTO authors_author VALUES('70cfdbf42a5d41f6bed13db6f5c136a5','Gordon','Ramsey','Curlinary');
+INSERT INTO authors_author VALUES('4922d8d498ac4ed08974180877992d6b','JK','Rowling','Sci-Fi');
+INSERT INTO authors_author VALUES('8385b0afddf74cdea738c42b1497b2dd','Stephen','King','Horror');
+INSERT INTO authors_author VALUES('2565c79b89104e3e86bfa0ad86ccc8a9','Tim','Ferris','Business');
+COMMIT;

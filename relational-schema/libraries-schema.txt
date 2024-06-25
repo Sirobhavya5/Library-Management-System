@@ -1,0 +1,4 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "libraries_library" ("uuid" char(32) NOT NULL PRIMARY KEY, "name" varchar(255) NOT NULL, "phone_number" varchar(255) NOT NULL, "address" varchar(255) NOT NULL, "owner_id" char(32) NOT NULL REFERENCES "users_customuser" ("uuid") DEFERRABLE INITIALLY DEFERRED);
+COMMIT;

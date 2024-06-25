@@ -1,0 +1,58 @@
+{% extends "website/authenticated/template.html" %}
+
+{% block title %}
+Library - My Books
+{% endblock title %}
+
+{% block main %}
+<main>
+    <section class="my-books">
+        <h1>My Books</h1>
+        <div class="book-list">
+            {% for book in books %}
+                <h4>{{ book.title }}</h4>
+                <h6>Author: {{ book.author.first_name }} {{ book.author.last_name }}</h6>
+                <h6>Price: {{ book.price }}</h6>
+                <h6>Library: {{ book.library.name }}</h6>
+                <h6>Publisher: {{ book.publisher.name }}</h6>
+                <h6>Vender: {{ book.vendor.name }}</h6>
+                <h6>Charge: {{ book.charge }}</h6>
+                
+                {% if book.status == "borrowed" %}
+                    <h6>Status: {{ book.status }}</h6>
+                    <h6>Available Date: {{ book.return_date }}</h6>
+
+                {% elif book.status == "available" %}
+                    <h6>Status: {{ book.status }}</h6>
+                {% endif %}
+                </br>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+
+<style>
+    .my-books {
+        width: 100vw;
+        height: 150vh;
+        background-color: #000;
+    }
+
+    .book-list {
+        position: absolute;
+        top: 25vh;
+
+        margin: 0 15vw;
+    }
+
+    .my-books h1 {
+        text-align: center;
+    }
+
+    .my-books h1, h2, h3, h4, h5, h6 {
+        color: white; 
+        font-family: Arial;
+        font-weight: 700;
+    }
+</style>
+{% endblock main %}

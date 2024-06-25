@@ -1,0 +1,10 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "users_customuser" ("last_login" datetime NULL, "uuid" char(32) NOT NULL PRIMARY KEY, "first_name" varchar(255) NOT NULL, "last_name" varchar(255) NOT NULL, "email" varchar(255) NOT NULL UNIQUE, "phone_number" varchar(255) NOT NULL, "password" varchar(255) NOT NULL, "street" varchar(255) NOT NULL, "city" varchar(255) NOT NULL, "state" varchar(255) NOT NULL, "zip_code" varchar(255) NOT NULL, "role" varchar(1) NOT NULL, "is_admin" bool NOT NULL);
+INSERT INTO users_customuser VALUES(NULL,'6ee67baa5ec240aba037dae7218370c6','Adam','Smith','member1@example.com','3124567890','pbkdf2_sha256$390000$7N5mS09u6aevSr0l8ihUOZ$NE48pz1HK5ko/SssLHGpGvb0D8WBl/Bed/5VW+0z1e4=','8423 Bell Oaks Dr','Newburgh','Iowa','47630','1',0);
+INSERT INTO users_customuser VALUES(NULL,'d69a995ae6964cad85aa01315aaf1bcf','Leon','White','member2@example.com','3124567890','pbkdf2_sha256$390000$R3x3xGLUszFB3zGS31R6lT$Af2VBffqeeUurmovcalHVsJ0FajL3TOfyLqYArfTBR4=','8423 Bell Oaks Dr','Newburgh','Iowa','47630','1',0);
+INSERT INTO users_customuser VALUES(NULL,'cd77cda02b9d4f189bbda7f334274d17','James','McCormick','employee1@example.com','3124567890','pbkdf2_sha256$390000$8LJAwOL73UygDOLPQi0zvp$HkM1wG+LTR6+lz1zD2KsNzgl3G3lxwT4KqYRK8zVYhY=','8423 Bell Oaks Dr','Newburgh','Iowa','47630','2',0);
+INSERT INTO users_customuser VALUES(NULL,'0d4cad7b0a914cf381ccf4081a90afa6','Chris','Brock','employee2@example.com','3124567890','pbkdf2_sha256$390000$fFfkxVj4CnXv3ueTYbxuOb$9p9fvyCdVQP7MwoI7lOw4JMnqliqemf9Gi5rZNl5xkY=','8423 Bell Oaks Dr','Newburgh','Iowa','47630','2',0);
+INSERT INTO users_customuser VALUES(NULL,'e746c90609784659b7bbcb5c89760f08','Jane','Doe','owner1@example.com','3124567890','pbkdf2_sha256$390000$zGYbCI0Tj9Jd0wjAJwGPBb$zm7a+xLFl8qy87qv4xG7rcTXj49vH9O6RhvBp5pvdUc=','8423 Bell Oaks Dr','Newburgh','Iowa','47630','3',0);
+INSERT INTO users_customuser VALUES(NULL,'cfb67b8538f9495a8d6c28f12a06acfb','Jack','Doves','owner2@example.com','3124567890','pbkdf2_sha256$390000$LAEfHjN0JV9KucKRwgqVzH$BUf/11nrd/aDv+1Uw8VQuWs5SNMNv3wKqcbgbihWQzE=','8423 Bell Oaks Dr','Newburgh','Iowa','47630','3',0);
+COMMIT;

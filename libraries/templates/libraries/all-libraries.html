@@ -1,0 +1,46 @@
+{% extends "website/unauthenticated/template.html" %}
+
+{% block title %}
+Library - All Libraries
+{% endblock title %}
+
+{% block main %}
+<main>
+    <section class="all-libraries">
+        <h1>All Libraries</h1>
+        <div class="library-list">
+            {% for library in libraries %}
+                <h4>{{ library.name }}</h4>
+                <h6>{{ library.address }}</h6>
+                <h6>{{ library.phone_number }}</h6>
+                </br>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+
+<style>
+    .all-libraries {
+        width: 100vw;
+        height: 100vh;
+        background-color: #000;
+    }
+
+    .library-list {
+        position: absolute;
+        top: 25vh;
+
+        margin: 0 15vw;
+    }
+
+    .all-libraries h1 {
+        text-align: center;
+    }
+
+    .all-libraries h1, h2, h3, h4, h5, h6 {
+        color: white; 
+        font-family: Arial;
+        font-weight: 700;
+    }
+</style>
+{% endblock main %}

@@ -1,0 +1,9 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "publishers_publisher" ("uuid" char(32) NOT NULL PRIMARY KEY, "name" varchar(255) NOT NULL, "country" varchar(255) NOT NULL);
+INSERT INTO publishers_publisher VALUES('d57b5cba7ad24120b37b132ebc066de1','Simon & Schuster','United States');
+INSERT INTO publishers_publisher VALUES('9190ff5529ae4ff598635245474548ce','Bertelsmann Education Group','United States');
+INSERT INTO publishers_publisher VALUES('fa62a4a9986b4cf39e945cbff1db92a6','Scholastic','United States');
+INSERT INTO publishers_publisher VALUES('9f5e2eb648674ebba10106742f2d3f13','Penguin Random House','United States');
+INSERT INTO publishers_publisher VALUES('401ac69981ad4ee590aa63af35c2f2c2','Macmillan Publishers','United States');
+COMMIT;

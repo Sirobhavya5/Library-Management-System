@@ -1,0 +1,9 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "vendors_vendor" ("uuid" char(32) NOT NULL PRIMARY KEY, "name" varchar(255) NOT NULL, "address" varchar(255) NOT NULL, "phone_number" varchar(255) NOT NULL);
+INSERT INTO vendors_vendor VALUES('ce1d3b52b57d4b29b798268c6bac1493','Pilsen Community Books','1102 W 18th St, Chicago, IL 60608','3124789434');
+INSERT INTO vendors_vendor VALUES('5f30b66e1d504eb68de27516fd3ac672','Open Books Pilsen','905 W 19th St, Chicago, IL 60608','3122439776');
+INSERT INTO vendors_vendor VALUES('e6849bf67fb5427a85d04f3b2a31c034','Sandmeyer''s Bookstore','714 S Dearborn St, Chicago, IL 60605','3129222104');
+INSERT INTO vendors_vendor VALUES('f853e8d2bc0b486f9210a172d1ea3045','Tangible Books','3324 S Halsted St, Chicago, IL 60608','7735654088');
+INSERT INTO vendors_vendor VALUES('918fd83905424e8880b670961ce88496','Madison Street Books','1127 W Madison St, Chicago, IL 60607','3129294140');
+COMMIT;

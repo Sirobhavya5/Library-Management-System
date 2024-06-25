@@ -1,0 +1,4 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "books_book" ("uuid" char(32) NOT NULL PRIMARY KEY, "title" varchar(255) NOT NULL, "price" decimal NOT NULL, "status" varchar(255) NOT NULL, "borrow_date" date NULL, "return_date" date NULL, "charge" decimal NOT NULL, "author_id" char(32) NOT NULL REFERENCES "authors_author" ("uuid") DEFERRABLE INITIALLY DEFERRED, "library_id" char(32) NOT NULL REFERENCES "libraries_library" ("uuid") DEFERRABLE INITIALLY DEFERRED, "publisher_id" char(32) NOT NULL REFERENCES "publishers_publisher" ("uuid") DEFERRABLE INITIALLY DEFERRED, "vendor_id" char(32) NOT NULL REFERENCES "vendors_vendor" ("uuid") DEFERRABLE INITIALLY DEFERRED, "borrower_id" char(32) NULL REFERENCES "users_customuser" ("uuid") DEFERRABLE INITIALLY DEFERRED);
+COMMIT;
